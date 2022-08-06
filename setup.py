@@ -8,12 +8,11 @@ EXTRAS = {
     "async": ["aiohttp"],
     "fast_async": ["aiohttp", "cchardet", "aiodns"]
 }
-VERSION = open(os.path.join(DIRECTORY, "akinator", "VERSION.txt")).read()
 READ_ME = open(os.path.join(DIRECTORY, "README.rst")).read()
 
 setup(
     name = "akinator.py",
-    version = VERSION,
+    version = "1.0.0",
     author = "Omkaar",
     author_email = "omkaar.nerurkar@gmail.com",
     packages = ["akinator", "akinator.async_aki"],
