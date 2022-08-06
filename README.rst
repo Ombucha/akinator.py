@@ -8,10 +8,10 @@ akinator.py
 .. image:: https://img.shields.io/tokei/lines/github/pysics/akinator.py
     :target: https://github.com/Pysics/akinator.py/graphs/contributors
     :alt: lines of code
-.. image:: https://img.shields.io/pypi/v/akinator.py
-    :target: https://pypi.python.org/pypi/akinator.py
+.. image:: https://img.shields.io/pypi/v/akinator
+    :target: https://pypi.python.org/pypi/akinator
     :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/pyversions/akinator.py
+.. image:: https://img.shields.io/pypi/pyversions/akinator
     :alt: Python version info
 
 
@@ -41,7 +41,7 @@ Otherwise, to get asynchronous support, do:
     py -m pip install "akinator.py[async]"
 
 
-To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do::
+To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do:
 
 .. code-block:: sh
 
@@ -56,22 +56,23 @@ To install the development version, do the following:
 
 .. code-block:: sh
 
-    $ git clone https://github.com/Pysics/akinator.py
+    git clone https://github.com/Pysics/akinator.py
 
 
 Requirements
 ============
 
-- Python ≥ 3.8.0
+* Python ≥ 3.8.0
 
 * `requests <https://pypi.python.org/pypi/requests>`_
 
 * `aiohttp <https://pypi.python.org/pypi/aiohttp>`_ (Optional, for async)
 
-- `aiodns <https://pypi.python.org/pypi/aiodns>`_ and `cchardet <https://pypi.python.org/pypi/cchardet>`_ (Optional, for faster performance with async)
+* `aiodns <https://pypi.python.org/pypi/aiodns>`_ and `cchardet <https://pypi.python.org/pypi/cchardet>`_ (Optional, for faster performance with async)
 
 
 Usually ``pip`` will handle these for you.
+
 
 Links
 =====

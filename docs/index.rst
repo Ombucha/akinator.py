@@ -185,8 +185,9 @@ close()
 
   However, if you specified your own ClientSession in "Akinator.start_game()", you might actually not want to call this function
 
+
 Variables
-=========
+---------
 
 These variables contain important information about the Akinator game. Please don't change any of these values in your program. It'll definitely break things.
 
