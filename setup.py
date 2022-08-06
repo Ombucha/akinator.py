@@ -3,7 +3,6 @@ import os
 
 DIRECTORY = os.path.dirname(__file__)
 
-REQUIREMENTS = open(os.path.join(DIRECTORY, "requirements.txt")).read().split()
 EXTRAS = {
     "async": ["aiohttp"],
     "fast_async": ["aiohttp", "cchardet", "aiodns"]
@@ -29,7 +28,7 @@ setup(
     description = "An API wrapper for Akinator.",
     long_description = READ_ME,
     long_description_content_type = "text/x-rst",
-    install_requires = REQUIREMENTS,
+    install_requires = ["requests"],
     extras_require = EXTRAS,
     python_requires = ">=3.8.0",
     classifiers = [
