@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a Question
+    about: Ask questions and have discussions with other users.
+    url: https://github.com/Pysics/akinator.py/discussions
