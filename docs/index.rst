@@ -1,10 +1,9 @@
-gocomics.py
+akinator.py
 ==========
 
 
-**************
 Quick Examples
-**************
+--------------
 
 Here's a quick little example of the library being used to make a simple, text-based Akinator game:
 
@@ -68,11 +67,9 @@ Here's the same game as above, but using the async version of the library instea
   loop.run_until_complete(main())
   loop.close()
 
-*************
-Documentation
-*************
 
-Because this library is relatively simple and only has a few functions to keep track of, all the documentation is going to go here in the README, instead of on a separate site like `readthedocs.io <https://readthedocs.org/>`_ or something.
+Documentation
+-------------
 
 The async version of this library works almost exactly the same as the regular, non-async one. For the most part, both have the same classes, names of functions, etc. Any differences will be noted.
 
@@ -81,10 +78,8 @@ The async version of this library works almost exactly the same as the regular, 
   >>> import akinator
   >>> akinator.__version__
 
-Alternatively, you can view the ``VERSION.txt`` file
 
-*class* Akinator()
-==================
+*class* ``Akinator()``
 
 A class that represents an Akinator game.
 
@@ -94,10 +89,13 @@ To get the **regular** Akinator class, make sure you've put ``import akinator`` 
 
 To get the **async** version of the class, make sure you have ``import akinator.async_aki`` or ``from akinator.async_aki import Akinator`` in your code and you'll be able to get the async Akinator class just as easily (Refer to the code examples above).
 
-Functions
-=========
 
-**Note**: In the async version, all the below functions are coroutines and must be awaited
+Functions
+---------
+
+.. note::
+
+    In the async version, all the below functions are coroutines and must be awaited
 
 start_game(*language=None, child_mode=False*)
   Start an Akinator game. Run this function first before the others. Returns a string containing the first question
@@ -238,8 +236,9 @@ The first 8 variables—``uri``, ``server``, ``session``, ``signature``, ``uid``
 
 ``client_session``, which is only in the async version of the class, will not change once it's been set, but calling ``Akinator.close()`` will reset it to None.
 
+
 Exceptions
-==========
+----------
 
 Exceptions that are thrown by the library
 
@@ -266,5 +265,3 @@ AkiTechnicalError
 
 CantGoBackAnyFurther:
   Raised when the user is on the first question and tries to go back further by calling ``Akinator.back()``
-
-"""""""""""""""""
