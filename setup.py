@@ -10,7 +10,7 @@ EXTRAS = {
 READ_ME = open(os.path.join(DIRECTORY, "README.rst")).read()
 
 setup(
-    name = "akinator.py",
+    name = "akinator",
     version = "1.0.0",
     author = "Omkaar",
     author_email = "omkaar.nerurkar@gmail.com",

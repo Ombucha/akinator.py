@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "akinator.py"
+name = "akinator"
 version = "1.0.0"
 description = "An API wrapper for Akinator."
 authors = ["Mr.Brawler <omkaar.nerurkar@gmail.com>"]
