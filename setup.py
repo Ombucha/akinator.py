@@ -11,7 +11,7 @@ READ_ME = open(os.path.join(DIRECTORY, "README.rst")).read()
 
 setup(
     name = "akinator",
-    version = "1.0.1",
+    version = "1.0.2",
     author = "Omkaar",
     author_email = "omkaar.nerurkar@gmail.com",
     packages = ["akinator", "akinator.async_aki"],
