@@ -2,11 +2,11 @@
 akinator.py
 ===========
 
-.. image:: https://img.shields.io/github/license/pysics/akinator.py
-    :target: https://github.com/Pysics/akinator.py/blob/main/LICENSE.md
+.. image:: https://img.shields.io/github/license/Infiniticity/akinator.py
+    :target: https://github.com/Infiniticity/akinator.py/blob/main/LICENSE.md
     :alt: license
-.. image:: https://img.shields.io/tokei/lines/github/pysics/akinator.py
-    :target: https://github.com/Pysics/akinator.py/graphs/contributors
+.. image:: https://img.shields.io/tokei/lines/github/Infiniticity/akinator.py
+    :target: https://github.com/Infiniticity/akinator.py/graphs/contributors
     :alt: lines of code
 .. image:: https://img.shields.io/pypi/v/akinator
     :target: https://pypi.python.org/pypi/akinator
@@ -56,7 +56,7 @@ To install the development version, do the following:
 
 .. code-block:: sh
 
-    git clone https://github.com/Pysics/akinator.py
+    git clone https://github.com/Infiniticity/akinator.py
 
 
 Requirements

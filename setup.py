@@ -18,11 +18,11 @@ setup(
     package_data = {
         "akinator": ["VERSION.txt"]
     },
-    url = "https://github.com/Pysics/akinator.py",
+    url = "https://github.com/Infiniticity/akinator.py",
     project_urls = {
         "Documentation": "https://akinator.readthedocs.io",
-        "Source": "https://github.com/Pysics/akinator.py",
-        "Tracker": "https://github.com/Pysics/akinator.py/issues",
+        "Source": "https://github.com/Infiniticity/akinator.py",
+        "Tracker": "https://github.com/Infiniticity/akinator.py/issues",
     },
     license = "MIT License",
     description = "An API wrapper for Akinator.",

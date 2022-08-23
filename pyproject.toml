@@ -2,10 +2,10 @@
 name = "akinator"
 version = "1.0.1"
 description = "An API wrapper for Akinator."
-authors = ["Mr.Brawler <omkaar.nerurkar@gmail.com>"]
+authors = ["Infiniticity <omkaar.nerurkar@gmail.com>"]
 license = "MIT"
 readme = "README.rst"
-repository = "https://github.com/Pysics/akinator.py/"
+repository = "https://github.com/Infiniticity/akinator.py/"
 documentation = "https://akinator.readthedocs.io/"
 keywords = ["python", "akinator"]
 classifiers = [
@@ -19,4 +19,4 @@ packages = ["akinator", "akinator.async_aki"]
 requests = "2.28.*"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/Pysics/akinator.py/issues"
+"Bug Tracker" = "https://github.com/Infiniticity/akinator.py/issues"
