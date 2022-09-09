@@ -24,10 +24,10 @@ To install the regular library without asynchronous support, just run the follow
 .. code-block:: sh
 
     # Unix / macOS
-    python3 -m pip install "akinator.py"
+    python3 -m pip install akinator
 
     # Windows
-    py -m pip install "akinator.py"
+    py -m pip install akinator
 
 
 Otherwise, to get asynchronous support, do:
@@ -35,10 +35,10 @@ Otherwise, to get asynchronous support, do:
 .. code-block:: sh
 
     # Unix / macOS
-    python3 -m pip install "akinator.py[async]"
+    python3 -m pip install akinator[async]
 
     # Windows
-    py -m pip install "akinator.py[async]"
+    py -m pip install akinator[async]
 
 
 To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do:
@@ -46,10 +46,10 @@ To get async support plus faster performance (via the ``aiodns`` and ``cchardet`
 .. code-block:: sh
 
     # Unix / macOS
-    python3 -m pip install "akinator.py[fast_async]"
+    python3 -m pip install akinator[fast_async]
 
     # Windows
-    py -m pip install "akinator.py[fast_async]"
+    py -m pip pip install akinator[fast_async]
 
 
 To install the development version, do the following:
