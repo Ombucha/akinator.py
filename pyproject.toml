@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "akinator"
-version = "1.0.2"
+version = "1.0.3"
 description = "An API wrapper for Akinator."
 authors = ["Infiniticity <omkaar.nerurkar@gmail.com>"]
 license = "MIT"
