@@ -49,7 +49,7 @@ To get async support plus faster performance (via the ``aiodns`` and ``cchardet`
     python3 -m pip install "akinator[fast_async]"
 
     # Windows
-    py -m pip pip install "akinator[fast_async]"
+    py -m pip install "akinator[fast_async]"
 
 
 To install the development version, do the following:
