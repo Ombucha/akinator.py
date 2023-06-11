@@ -4,7 +4,7 @@ Akinator API Wrapper
 
 A basic API wrapper for Akinator.
 
-:copyright: (c) 2019 NinjaSnail1080 & (c) 2022 Omkaar
+:copyright: (c) 2019 NinjaSnail1080 & (c) 2022-present Omkaar
 :license: MIT, see LICENSE for more details.
 """
 
