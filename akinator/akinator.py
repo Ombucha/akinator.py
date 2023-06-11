@@ -25,6 +25,7 @@ SOFTWARE.
 import re
 import time
 import json
+import warnings
 
 from .utils import ans_to_id, get_lang_and_theme, raise_connection_error
 from .exceptions import CantGoBackAnyFurther
@@ -34,6 +35,7 @@ try:
 except ImportError:
     pass
 
+warnings.filterwarnings("ignore")
 
 NEW_SESSION_URL = "https://{}/new_session?callback=jQuery331023608747682107778_{}&urlApiWs={}&partner=1&childMod={}&player=website-desktop&uid_ext_session={}&frontaddr={}&constraint=ETAT<>'AV'&soft_constraint={}&question_filter={}"
 ANSWER_URL = "https://{}/answer_api?callback=jQuery331023608747682107778_{}&urlApiWs={}&childMod={}&session={}&signature={}&step={}&answer={}&frontaddr={}&question_filter={}"
@@ -109,7 +111,7 @@ class Akinator():
 
         bad_list = ["https://srv12.akinator.com:9398/ws"]
         while True:
-            r = requests.get("https://" + uri)
+            r = requests.get("https://" + uri, verify=False)
 
             match = server_regex.search(r.text)
             parsed = json.loads(match.group().split("'arrUrlThemesToPlay', ")[-1])
@@ -166,7 +168,7 @@ class Akinator():
 
         self._get_session_info()
 
-        r = requests.get(NEW_SESSION_URL.format(self.uri, self.timestamp, self.server, str(self.child_mode).lower(), self.uid, self.frontaddr, soft_constraint, self.question_filter), headers=HEADERS)
+        r = requests.get(NEW_SESSION_URL.format(self.uri, self.timestamp, self.server, str(self.child_mode).lower(), self.uid, self.frontaddr, soft_constraint, self.question_filter), headers=HEADERS, verify=False)
         resp = self._parse_response(r.text)
 
         if resp["completion"] == "OK":
@@ -187,7 +189,7 @@ class Akinator():
         """
         ans = ans_to_id(ans)
 
-        r = requests.get(ANSWER_URL.format(self.uri, self.timestamp, self.server, str(self.child_mode).lower(), self.session, self.signature, self.step, ans, self.frontaddr, self.question_filter), headers=HEADERS)
+        r = requests.get(ANSWER_URL.format(self.uri, self.timestamp, self.server, str(self.child_mode).lower(), self.session, self.signature, self.step, ans, self.frontaddr, self.question_filter), headers=HEADERS, verify=False)
         resp = self._parse_response(r.text)
 
         if resp["completion"] == "OK":
@@ -204,7 +206,7 @@ class Akinator():
         if self.step == 0:
             raise CantGoBackAnyFurther("You were on the first question and couldn't go back any further")
 
-        r = requests.get(BACK_URL.format(self.server, self.timestamp, str(self.child_mode).lower(), self.session, self.signature, self.step, self.question_filter), headers=HEADERS)
+        r = requests.get(BACK_URL.format(self.server, self.timestamp, str(self.child_mode).lower(), self.session, self.signature, self.step, self.question_filter), headers=HEADERS, verify=False)
         resp = self._parse_response(r.text)
 
         if resp["completion"] == "OK":
@@ -222,7 +224,7 @@ class Akinator():
 
         It's recommended that you call this function when Aki's progression is above 85%, which is when he will have most likely narrowed it down to just one choice. You can get his current progression via "Akinator.progression"
         """
-        r = requests.get(WIN_URL.format(self.server, self.timestamp, str(self.child_mode).lower(), self.session, self.signature, self.step), headers=HEADERS)
+        r = requests.get(WIN_URL.format(self.server, self.timestamp, str(self.child_mode).lower(), self.session, self.signature, self.step), headers=HEADERS, verify=False)
         resp = self._parse_response(r.text)
 
         if resp["completion"] == "OK":
