@@ -163,7 +163,7 @@ class Akinator():
         if client_session:
             self.client_session = client_session
         else:
-            self.client_session = aiohttp.ClientSession()
+            self.client_session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False))
 
         region_info = await self._auto_get_region(get_lang_and_theme(language)["lang"], get_lang_and_theme(language)["theme"])
         self.uri, self.server = region_info["uri"], region_info["server"]
