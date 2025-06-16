@@ -8,7 +8,7 @@ HERE = Path(__file__).resolve().parent
 README = (HERE / "README.rst").read_text()
 
 setup(
-    name = "akinator.py",
+    name = "akinator",
     version = "2.0.0",
     description = "A basic API wrapper for Akinator.",
     long_description = README,
