@@ -1,81 +1,155 @@
-===========
-akinator.py
-===========
+.. image:: https://raw.githubusercontent.com/Ombucha/akinator.py/main/banner.png
 
-.. image:: https://img.shields.io/github/license/Infiniticity/akinator.py
-    :target: https://github.com/Infiniticity/akinator.py/blob/main/LICENSE.md
-    :alt: license
-.. image:: https://img.shields.io/tokei/lines/github/Infiniticity/akinator.py
-    :target: https://github.com/Infiniticity/akinator.py/graphs/contributors
-    :alt: lines of code
 .. image:: https://img.shields.io/pypi/v/akinator
     :target: https://pypi.python.org/pypi/akinator
-    :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/pyversions/akinator
-    :alt: Python version info
+    :alt: PyPI version
+.. image:: https://img.shields.io/pypi/dm/akinator
+    :target: https://pypi.python.org/pypi/akinator
+    :alt: PyPI downloads
+.. image:: https://sloc.xyz/github/Ombucha/akinator.py
+    :target: https://github.com/Ombucha/akinator.py/graphs/contributors
+    :alt: Lines of code
+.. image:: https://img.shields.io/github/repo-size/Ombucha/akinator.py
+    :target: https://github.com/Ombucha/akinator.py
+    :alt: Repository size
 
+A modern, easy-to-use Python wrapper for the Akinator web game, supporting both synchronous and asynchronous usage.
 
-**********
-Installing
-**********
+Features
+--------
 
-To install the regular library without asynchronous support, just run the following command:
-
-.. code-block:: sh
-
-    # Unix / macOS
-    python3 -m pip install "akinator"
-
-    # Windows
-    py -m pip install "akinator"
-
-
-Otherwise, to get asynchronous support, do:
-
-.. code-block:: sh
-
-    # Unix / macOS
-    python3 -m pip install "akinator[async]"
-
-    # Windows
-    py -m pip install "akinator[async]"
-
-
-To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do:
-
-.. code-block:: sh
-
-    # Unix / macOS
-    python3 -m pip install "akinator[fast_async]"
-
-    # Windows
-    py -m pip install "akinator[fast_async]"
-
-
-To install the development version, do the following:
-
-.. code-block:: sh
-
-    git clone https://github.com/Infiniticity/akinator.py
-
+- Play Akinator in Python (sync and async)
+- Supports all official Akinator languages and themes
+- Simple, Pythonic interface
+- Type hints for better editor support
+- Custom exceptions for robust error handling
+- Well-tested and documented
+- Actively maintained and open source
 
 Requirements
-============
+------------
 
-* Python ≥ 3.8.0
+- **Python 3.8 or higher**
+- `cloudscraper <https://pypi.org/project/cloudscraper/>`_
 
-* `requests <https://pypi.python.org/pypi/requests>`_
+Installation
+------------
 
-* `aiohttp <https://pypi.python.org/pypi/aiohttp>`_ (Optional, for async)
+To install the latest stable version:
 
-* `aiodns <https://pypi.python.org/pypi/aiodns>`_ and `cchardet <https://pypi.python.org/pypi/cchardet>`_ (Optional, for faster performance with async)
+.. code-block:: sh
+
+    python3 -m pip install akinator
+
+To install the development version:
+
+.. code-block:: sh
+
+    git clone https://github.com/Ombucha/akinator.py
+    cd akinator.py
+    python3 -m pip install -e .
+
+Getting Started
+---------------
+
+Synchronous Example
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import akinator
+
+    aki = akinator.Akinator()
+    aki.start_game()
+
+    while not aki.finished:
+        print(f"\nQuestion: {str(aki)}")
+        user_input = input(
+            "Your answer ([y]es/[n]o/[i] don't know/[p]robably/[pn] probably not, [b]ack): "
+        ).strip().lower()
+        if user_input == "b":
+            try:
+                aki.back()
+            except akinator.CantGoBackAnyFurther:
+                print("You can't go back any further!")
+        else:
+            try:
+                aki.answer(user_input)
+            except akinator.InvalidChoiceError:
+                print("Invalid answer. Please try again.")
+
+    print("\n--- Game Over ---")
+    print(f"Proposition: {aki.name_proposition}")
+    print(f"Description: {aki.description_proposition}")
+    print(f"Pseudo: {aki.pseudo}")
+    print(f"Photo: {aki.photo}")
+    print(f"Final Message: {aki.question}")
 
 
-Usually ``pip`` will handle these for you.
+Asynchronous Example
+~~~~~~~~~~~~~~~~~~~
 
+.. code-block:: python
+
+    import asyncio
+    import akinator
+
+    aki = akinator.Akinator()
+
+    async def play():
+        await aki.start_game()
+
+        while not aki.finished:
+            print(f"\nQuestion: {str(aki)}")
+            user_input = input(
+                "Your answer ([y]es/[n]o/[i] don't know/[p]robably/[pn] probably not, [b]ack): "
+            ).strip().lower()
+            if user_input == "b":
+                try:
+                    await aki.back()
+                except akinator.CantGoBackAnyFurther:
+                    print("You can't go back any further!")
+            else:
+                try:
+                    await aki.answer(user_input)
+                except akinator.InvalidChoiceError:
+                    print("Invalid answer. Please try again.")
+
+        print("\n--- Game Over ---")
+        print(f"Proposition: {aki.name_proposition}")
+        print(f"Description: {aki.description_proposition}")
+        print(f"Pseudo: {aki.pseudo}")
+        print(f"Photo: {aki.photo}")
+        print(f"Final Message: {aki.question}")
+
+    asyncio.run(play())
+
+
+Advanced Usage
+--------------
+
+- **Languages:** All official Akinator languages are supported (see `LANG_MAP` in the code).
+- **Themes:** Use "c" for characters, "a" for animals, "o" for objects (not all themes are available in all languages).
+- **Error Handling:** All errors raise custom exceptions like `CantGoBackAnyFurther`, `InvalidLanguageError`, `InvalidChoiceError`, and `InvalidThemeError`.
+- **Custom Session:** You can pass your own `cloudscraper.CloudScraper` session for advanced usage.
+- **Async and Sync:** Both sync and async clients are available for all use cases.
+- **Testing:** Comprehensive test suite for both sync and async clients.
+- **Examples:** See the `examples/` directory for CLI and bot scripts.
 
 Links
-=====
+-----
 
 - `Akinator <https://akinator.com/>`_
-- `Documentation <https://akinator.readthedocs.io/>`_
+- `Documentation <https://akinator.readthedocs.io>`_
+- `Examples <https://github.com/Ombucha/akinator.py/tree/main/examples>`_
+- `PyPI <https://pypi.org/project/akinator.py/>`_
+
+Contributing
+------------
+
+Contributions are welcome! Please see the `CONTRIBUTING.md` file for details.
+
+License
+-------
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.

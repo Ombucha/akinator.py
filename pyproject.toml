@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "akinator"
-version = "1.1.1"
-description = "An API wrapper for Akinator."
-authors = ["Infiniticity <omkaar.nerurkar@gmail.com>"]
+name = "akinator.py"
+version = "2.0.0"
+description = "A basic API wrapper for Akinator."
+authors = ["Ombucha <omkaar.nerurkar@gmail.com>"]
 license = "MIT"
 readme = "README.rst"
-repository = "https://github.com/Infiniticity/akinator.py/"
+repository = "https://github.com/Ombucha/akinator.py/"
 documentation = "https://akinator.readthedocs.io/"
 keywords = ["python", "akinator"]
 classifiers = [
@@ -13,10 +13,10 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
-packages = ["akinator", "akinator.async_aki"]
+packages = ["akinator"]
 
 [tool.poetry.dependencies]
-requests = "2.28.*"
+cloudscraper = "*"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/Infiniticity/akinator.py/issues"
+"Bug Tracker" = "https://github.com/Ombucha/akinator.py/issues"
