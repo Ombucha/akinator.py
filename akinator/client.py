@@ -115,7 +115,7 @@ class Client:
     :ivar confidence: The confidence level of the current question, represented as a float between 0 and 1.
     :ivar theme_id: The ID of the current theme, represented as an integer.
     :ivar theme_name: The name of the current theme, represented as a string.
-    :ivar akitide_url: The URL of the current akitude image associated with the game session.
+    :ivar akitude_url: The URL of the current akitude image associated with the game session.
     """
 
     def __init__(self, session: Optional[CloudScraper] = None):

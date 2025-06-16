@@ -15,6 +15,11 @@
 
 A modern, easy-to-use Python wrapper for the Akinator web game, supporting both synchronous and asynchronous usage.
 
+Background
+----------
+
+Originally, there was a popular Python library called `akinator.py`, which provided a simple interface to interact with the Akinator API. However, this library suddenly disappeared from public repositories without notice. In response, a mirror was created here to preserve its functionality. Unfortunately, it too stopped working after Akinator made changes to their backend API. Later, another library called `akipy` emerged to fill the gap, but it also became non-functional when Cloudflare protection was introduced on Akinator's endpoints. This library revives Akinator interaction by replacing the standard `requests` library with `cloudscraper`, allowing it to bypass Cloudflare’s anti-bot measures and restoring full functionality.
+
 Features
 --------
 

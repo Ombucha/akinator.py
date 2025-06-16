@@ -98,7 +98,7 @@ class TestAkinatorClient(unittest.TestCase):
         self.assertEqual(self.client.theme_name, "Characters")
         self.client.language = "en"
         self.client.akitude = "defi.png"
-        self.assertIn("defi.png", self.client.akitide_url)
+        self.assertIn("defi.png", self.client.akitude_url)
         self.client.win = True
         self.client.finished = False
         self.client.proposition = "prop"
