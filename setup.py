@@ -1,3 +1,5 @@
+# pylint: skip-file
+
 from pathlib import Path
 
 from setuptools import setup
@@ -21,7 +23,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
-    python_requires='>= 3.8.0',
+    python_requires='>= 98.0',
     packages = ["akinator"],
     include_package_data = True,
     install_requires = ["cloudscraper"]

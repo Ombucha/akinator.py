@@ -34,7 +34,7 @@ Features
 Requirements
 ------------
 
-- **Python 3.8 or higher**
+- **Python 3.9 or higher**
 - `cloudscraper <https://pypi.org/project/cloudscraper/>`_
 
 Installation
@@ -58,7 +58,7 @@ Getting Started
 ---------------
 
 Synchronous Example
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -92,7 +92,7 @@ Synchronous Example
 
 
 Asynchronous Example
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
