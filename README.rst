@@ -3,13 +3,13 @@
 .. image:: https://img.shields.io/pypi/v/akinator
     :target: https://pypi.python.org/pypi/akinator
     :alt: PyPI version
-.. image:: https://img.shields.io/pypi/dm/akinator
+.. image:: https://static.pepy.tech/personalized-badge/akinator?period=total&left_text=downloads&left_color=grey&right_color=red
     :target: https://pypi.python.org/pypi/akinator
     :alt: PyPI downloads
-.. image:: https://sloc.xyz/github/Ombucha/akinator.py
+.. image:: https://sloc.xyz/github/Ombucha/akinator.py?lower=True
     :target: https://github.com/Ombucha/akinator.py/graphs/contributors
     :alt: Lines of code
-.. image:: https://img.shields.io/github/repo-size/Ombucha/akinator.py
+.. image:: https://img.shields.io/github/repo-size/Ombucha/akinator.py?color=yellow
     :target: https://github.com/Ombucha/akinator.py
     :alt: Repository size
 
@@ -18,7 +18,7 @@ A modern, easy-to-use Python wrapper for the Akinator web game, supporting both 
 Background
 ----------
 
-Originally, there was a popular Python library called ``akinator.py``, which provided a simple interface to interact with the Akinator API. However, this library suddenly disappeared from public repositories without notice. In response, a mirror was created here to preserve its functionality. Unfortunately, it too stopped working after Akinator made changes to their backend API. Later, another library called ``akipy`` emerged to fill the gap, but it also became non-functional when Cloudflare protection was introduced on Akinator's endpoints. This library revives Akinator interaction by replacing the standard ``requests`` library with ```cloudscraper``, allowing it to bypass Cloudflare's anti-bot measures and restoring full functionality.
+Originally, there was a popular Python library called ``akinator.py``, which provided a simple interface to interact with the Akinator API. However, this library suddenly disappeared from public repositories without notice. In response, a mirror was created here to preserve its functionality. Unfortunately, it too stopped working after Akinator made changes to their backend API. Later, another library called ``akipy`` emerged to fill the gap, but it also became non-functional when Cloudflare protection was introduced on Akinator's endpoints. This library revives Akinator interaction by replacing the standard ``requests`` library with ``cloudscraper``, allowing it to bypass Cloudflare's anti-bot measures and restoring full functionality.
 
 Features
 --------
