@@ -332,12 +332,13 @@ class AsyncClient:
 
         url = f"https://{self.language}.akinator.com/exclude"
         data = {
-            "step": self.step,
+            "step": self.step + 1,
             "progression": self.progression,
             "sid": THEME_IDS[self.theme],
             "cm": str(self.child_mode).lower(),
             "session": self.session_id,
-            "signature": self.signature
+            "signature": self.signature,
+            "forward_answer": 1
         }
         self.win = False
         self.id_proposition = ""
