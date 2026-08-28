@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2025 Omkaar
+Copyright (c) 2026 Omkaar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -118,7 +118,6 @@ class AsyncClient:
     :ivar question: The current question being asked in the game session.
     :ivar progression: The progression percentage of the game session, represented as a float.
     :ivar step: The current step number in the game session.
-    :ivar akitude: The current akitude image associated with the game session.
     :ivar step_last_proposition: The last proposition made in the current step.
     :ivar finished: A boolean indicating whether the game session has finished.
     :ivar win: A boolean indicating whether the player has won the game session.
@@ -130,7 +129,6 @@ class AsyncClient:
     :ivar confidence: The confidence level of the current question, represented as a float between 0 and 1.
     :ivar theme_id: The ID of the current theme, represented as an integer.
     :ivar theme_name: The name of the current theme, represented as a string.
-    :ivar akitude_url: The URL of the current akitude image associated with the game session.
     """
 
     def __init__(self, session: Optional[CloudScraper] = None):
@@ -150,7 +148,6 @@ class AsyncClient:
         self.question = None
         self.progression = None
         self.step = None
-        self.akitude = None
         self.step_last_proposition = ""
         self.finished = False
 
@@ -189,7 +186,6 @@ class AsyncClient:
             self.flag_photo = data["flag_photo"]
             self.photo = data["photo"]
         else:
-            self.akitude = data["akitude"]
             self.step = int(data["step"])
             self.progression = float(data["progression"])
             self.question = data["question"]
@@ -246,7 +242,6 @@ class AsyncClient:
             self.proposition = unescape(proposition.group(1))
             self.progression = 0
             self.step = 0
-            self.akitude = "defi.png"
         except Exception as e:
             raise RuntimeError("Failed to start the game.") from e
 
@@ -380,7 +375,6 @@ class AsyncClient:
 
             self.finished = True
             self.win = True
-            self.akitude = "triomphe.png"
             self.id_proposition = ""
         except Exception as e:
             raise RuntimeError("Failed to choose the proposition.") from e
@@ -403,7 +397,6 @@ class AsyncClient:
         """
         self.finished = True
         self.win = False
-        self.akitude = "deception.png"
         self.id_proposition = ""
 
         questions = {
@@ -448,13 +441,6 @@ class AsyncClient:
         Returns the name of the current theme.
         """
         return "Characters" if self.theme == "c" else "Animals" if self.theme == "a" else "Objects"
-
-    @property
-    def akitude_url(self) -> str:
-        """
-        Returns the URL of the current akitude image.
-        """
-        return f"https://{self.language}.akinator.com/assets/img/akitudes_670x1096/{self.akitude}"
 
     def __str__(self):
         if self.win and not self.finished:

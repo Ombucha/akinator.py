@@ -8,8 +8,8 @@ sys.path.insert(0, os.path.abspath(".."))
 
 on_rtd = os.environ.get("READTHEDOCS") == "True"
 project = "akinator.py"
-copyright = "2025, Omkaar"
+copyright = "2026, Omkaar"
 author = "Ombucha"
-release = "2.0.2"
+release = "2.1.0"
 
 extensions = ["sphinx.ext.autodoc"]

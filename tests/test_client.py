@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2025 Omkaar
+Copyright (c) 2026 Omkaar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -97,8 +97,6 @@ class TestAkinatorClient(unittest.TestCase):
         self.assertEqual(self.client.theme_id, 1)
         self.assertEqual(self.client.theme_name, "Characters")
         self.client.language = "en"
-        self.client.akitude = "defi.png"
-        self.assertIn("defi.png", self.client.akitude_url)
         self.client.win = True
         self.client.finished = False
         self.client.proposition = "prop"
@@ -130,7 +128,6 @@ class TestAkinatorClient(unittest.TestCase):
         self.client.defeat()
         self.assertTrue(self.client.finished)
         self.assertFalse(self.client.win)
-        self.assertEqual(self.client.akitude, "deception.png")
         self.assertEqual(self.client.question, "Bravo, you have defeated me !\nShare your feat with your friends.")
         self.assertEqual(self.client.progression, 100)
 
@@ -149,7 +146,6 @@ class TestAkinatorClient(unittest.TestCase):
         self.client.defeat()
         self.assertTrue(self.client.finished)
         self.assertFalse(self.client.win)
-        self.assertEqual(self.client.akitude, "deception.png")
 
     def test_theme_ids_and_names(self):
         self.client.theme = "c"

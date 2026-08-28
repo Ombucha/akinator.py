@@ -81,7 +81,6 @@ async def akinator_slash(interaction: discord.Interaction):
     aki = akinator.AsyncAkinator()
     await aki.start_game()
     embed = discord.Embed(title="Akinator", description=aki.question, color=discord.Color.blurple())
-    embed.set_image(url=aki.akitude_url)
     view = AkiView(aki, interaction.user)
     message = await interaction.edit_original_response(embed=embed, view=view)
     while not aki.finished:
@@ -103,7 +102,6 @@ async def akinator_slash(interaction: discord.Interaction):
             return
         desc = str(aki)
         embed = discord.Embed(title="Akinator", description=desc, color=discord.Color.blurple())
-        embed.set_image(url=aki.akitude_url)
         if desc.strip().lower().startswith("i think of"):
             view = GuessView(interaction.user)
         else:

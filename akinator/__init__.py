@@ -4,7 +4,7 @@ Akinator API Wrapper
 
 A basic API wrapper for Akinator.
 
-:copyright: (c) 2025 Omkaar
+:copyright: (c) 2026 Omkaar
 :license: MIT, see LICENSE for more details.
 """
 
@@ -12,8 +12,8 @@ A basic API wrapper for Akinator.
 __title__ = "akinator"
 __author__ = "Omkaar"
 __license__ = "MIT"
-__copyright__ = "Copyright 2025 Omkaar"
-__version__ = "2.0.2"
+__copyright__ = "Copyright 2026 Omkaar"
+__version__ = "2.1.0"
 
 
 from .client import *

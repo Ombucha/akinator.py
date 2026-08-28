@@ -9,7 +9,7 @@ README = (HERE / "README.rst").read_text()
 
 setup(
     name = "akinator",
-    version = "2.0.2",
+    version = "2.1.0",
     description = "A basic API wrapper for Akinator.",
     long_description = README,
     long_description_content_type = "text/x-rst",
